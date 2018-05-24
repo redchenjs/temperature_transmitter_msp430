@@ -1,1 +1,2 @@
-# temperature_transmitter_msp430
+Temperature Transmitter
+=======================
