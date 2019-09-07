@@ -35,7 +35,7 @@
 #define SSD1351_CS_SET()    P1OUT |= BIT4
 #define SSD1351_CS_CLR()    P1OUT &=~BIT4
 
-#define SSD1351_WRITE_BYTE(__DATA) usci_a0_spi_transmit_frame(&__DATA, 1)
+#define SSD1351_WRITE_BYTE(__DATA)  usci_a0_spi_transmit_frame(&__DATA, 1)
 
 enum ssd1351_panel_value {
     SSD1351_WIDTH  = 128,
@@ -587,69 +587,69 @@ void ssd1351_show_rainbow(void)
 static inline void ssd1351_set_gray_scale_table(void)
 {
     ssd1351_write_byte(SET_GRAY_SCALE_TABLE, SSD1351_CMD);  // Set Pulse Width for Gray Scale Table
-    ssd1351_write_byte(0x02, SSD1351_DATA);           // Gray Scale Level 1
-    ssd1351_write_byte(0x03, SSD1351_DATA);           // Gray Scale Level 2
-    ssd1351_write_byte(0x04, SSD1351_DATA);           // Gray Scale Level 3
-    ssd1351_write_byte(0x05, SSD1351_DATA);           // Gray Scale Level 4
-    ssd1351_write_byte(0x06, SSD1351_DATA);           // Gray Scale Level 5
-    ssd1351_write_byte(0x07, SSD1351_DATA);           // Gray Scale Level 6
-    ssd1351_write_byte(0x08, SSD1351_DATA);           // Gray Scale Level 7
-    ssd1351_write_byte(0x09, SSD1351_DATA);           // Gray Scale Level 8
-    ssd1351_write_byte(0x0A, SSD1351_DATA);           // Gray Scale Level 9
-    ssd1351_write_byte(0x0B, SSD1351_DATA);           // Gray Scale Level 10
-    ssd1351_write_byte(0x0C, SSD1351_DATA);           // Gray Scale Level 11
-    ssd1351_write_byte(0x0D, SSD1351_DATA);           // Gray Scale Level 12
-    ssd1351_write_byte(0x0E, SSD1351_DATA);           // Gray Scale Level 13
-    ssd1351_write_byte(0x0F, SSD1351_DATA);           // Gray Scale Level 14
-    ssd1351_write_byte(0x10, SSD1351_DATA);           // Gray Scale Level 15
-    ssd1351_write_byte(0x11, SSD1351_DATA);           // Gray Scale Level 16
-    ssd1351_write_byte(0x12, SSD1351_DATA);           // Gray Scale Level 17
-    ssd1351_write_byte(0x13, SSD1351_DATA);           // Gray Scale Level 18
-    ssd1351_write_byte(0x15, SSD1351_DATA);           // Gray Scale Level 19
-    ssd1351_write_byte(0x17, SSD1351_DATA);           // Gray Scale Level 20
-    ssd1351_write_byte(0x19, SSD1351_DATA);           // Gray Scale Level 21
-    ssd1351_write_byte(0x1B, SSD1351_DATA);           // Gray Scale Level 22
-    ssd1351_write_byte(0x1D, SSD1351_DATA);           // Gray Scale Level 23
-    ssd1351_write_byte(0x1F, SSD1351_DATA);           // Gray Scale Level 24
-    ssd1351_write_byte(0x21, SSD1351_DATA);           // Gray Scale Level 25
-    ssd1351_write_byte(0x23, SSD1351_DATA);           // Gray Scale Level 26
-    ssd1351_write_byte(0x25, SSD1351_DATA);           // Gray Scale Level 27
-    ssd1351_write_byte(0x27, SSD1351_DATA);           // Gray Scale Level 28
-    ssd1351_write_byte(0x2A, SSD1351_DATA);           // Gray Scale Level 29
-    ssd1351_write_byte(0x2D, SSD1351_DATA);           // Gray Scale Level 30
-    ssd1351_write_byte(0x30, SSD1351_DATA);           // Gray Scale Level 31
-    ssd1351_write_byte(0x33, SSD1351_DATA);           // Gray Scale Level 32
-    ssd1351_write_byte(0x36, SSD1351_DATA);           // Gray Scale Level 33
-    ssd1351_write_byte(0x39, SSD1351_DATA);           // Gray Scale Level 34
-    ssd1351_write_byte(0x3C, SSD1351_DATA);           // Gray Scale Level 35
-    ssd1351_write_byte(0x3F, SSD1351_DATA);           // Gray Scale Level 36
-    ssd1351_write_byte(0x42, SSD1351_DATA);           // Gray Scale Level 37
-    ssd1351_write_byte(0x45, SSD1351_DATA);           // Gray Scale Level 38
-    ssd1351_write_byte(0x48, SSD1351_DATA);           // Gray Scale Level 39
-    ssd1351_write_byte(0x4C, SSD1351_DATA);           // Gray Scale Level 40
-    ssd1351_write_byte(0x50, SSD1351_DATA);           // Gray Scale Level 41
-    ssd1351_write_byte(0x54, SSD1351_DATA);           // Gray Scale Level 42
-    ssd1351_write_byte(0x58, SSD1351_DATA);           // Gray Scale Level 43
-    ssd1351_write_byte(0x5C, SSD1351_DATA);           // Gray Scale Level 44
-    ssd1351_write_byte(0x60, SSD1351_DATA);           // Gray Scale Level 45
-    ssd1351_write_byte(0x64, SSD1351_DATA);           // Gray Scale Level 46
-    ssd1351_write_byte(0x68, SSD1351_DATA);           // Gray Scale Level 47
-    ssd1351_write_byte(0x6C, SSD1351_DATA);           // Gray Scale Level 48
-    ssd1351_write_byte(0x70, SSD1351_DATA);           // Gray Scale Level 49
-    ssd1351_write_byte(0x74, SSD1351_DATA);           // Gray Scale Level 50
-    ssd1351_write_byte(0x78, SSD1351_DATA);           // Gray Scale Level 51
-    ssd1351_write_byte(0x7D, SSD1351_DATA);           // Gray Scale Level 52
-    ssd1351_write_byte(0x82, SSD1351_DATA);           // Gray Scale Level 53
-    ssd1351_write_byte(0x87, SSD1351_DATA);           // Gray Scale Level 54
-    ssd1351_write_byte(0x8C, SSD1351_DATA);           // Gray Scale Level 55
-    ssd1351_write_byte(0x91, SSD1351_DATA);           // Gray Scale Level 56
-    ssd1351_write_byte(0x96, SSD1351_DATA);           // Gray Scale Level 57
-    ssd1351_write_byte(0x9B, SSD1351_DATA);           // Gray Scale Level 58
-    ssd1351_write_byte(0xA0, SSD1351_DATA);           // Gray Scale Level 59
-    ssd1351_write_byte(0xA5, SSD1351_DATA);           // Gray Scale Level 60
-    ssd1351_write_byte(0xAA, SSD1351_DATA);           // Gray Scale Level 61
-    ssd1351_write_byte(0xAF, SSD1351_DATA);           // Gray Scale Level 62
-    ssd1351_write_byte(0xB4, SSD1351_DATA);           // Gray Scale Level 63
+    ssd1351_write_byte(0x02, SSD1351_DATA);                 // Gray Scale Level 1
+    ssd1351_write_byte(0x03, SSD1351_DATA);                 // Gray Scale Level 2
+    ssd1351_write_byte(0x04, SSD1351_DATA);                 // Gray Scale Level 3
+    ssd1351_write_byte(0x05, SSD1351_DATA);                 // Gray Scale Level 4
+    ssd1351_write_byte(0x06, SSD1351_DATA);                 // Gray Scale Level 5
+    ssd1351_write_byte(0x07, SSD1351_DATA);                 // Gray Scale Level 6
+    ssd1351_write_byte(0x08, SSD1351_DATA);                 // Gray Scale Level 7
+    ssd1351_write_byte(0x09, SSD1351_DATA);                 // Gray Scale Level 8
+    ssd1351_write_byte(0x0A, SSD1351_DATA);                 // Gray Scale Level 9
+    ssd1351_write_byte(0x0B, SSD1351_DATA);                 // Gray Scale Level 10
+    ssd1351_write_byte(0x0C, SSD1351_DATA);                 // Gray Scale Level 11
+    ssd1351_write_byte(0x0D, SSD1351_DATA);                 // Gray Scale Level 12
+    ssd1351_write_byte(0x0E, SSD1351_DATA);                 // Gray Scale Level 13
+    ssd1351_write_byte(0x0F, SSD1351_DATA);                 // Gray Scale Level 14
+    ssd1351_write_byte(0x10, SSD1351_DATA);                 // Gray Scale Level 15
+    ssd1351_write_byte(0x11, SSD1351_DATA);                 // Gray Scale Level 16
+    ssd1351_write_byte(0x12, SSD1351_DATA);                 // Gray Scale Level 17
+    ssd1351_write_byte(0x13, SSD1351_DATA);                 // Gray Scale Level 18
+    ssd1351_write_byte(0x15, SSD1351_DATA);                 // Gray Scale Level 19
+    ssd1351_write_byte(0x17, SSD1351_DATA);                 // Gray Scale Level 20
+    ssd1351_write_byte(0x19, SSD1351_DATA);                 // Gray Scale Level 21
+    ssd1351_write_byte(0x1B, SSD1351_DATA);                 // Gray Scale Level 22
+    ssd1351_write_byte(0x1D, SSD1351_DATA);                 // Gray Scale Level 23
+    ssd1351_write_byte(0x1F, SSD1351_DATA);                 // Gray Scale Level 24
+    ssd1351_write_byte(0x21, SSD1351_DATA);                 // Gray Scale Level 25
+    ssd1351_write_byte(0x23, SSD1351_DATA);                 // Gray Scale Level 26
+    ssd1351_write_byte(0x25, SSD1351_DATA);                 // Gray Scale Level 27
+    ssd1351_write_byte(0x27, SSD1351_DATA);                 // Gray Scale Level 28
+    ssd1351_write_byte(0x2A, SSD1351_DATA);                 // Gray Scale Level 29
+    ssd1351_write_byte(0x2D, SSD1351_DATA);                 // Gray Scale Level 30
+    ssd1351_write_byte(0x30, SSD1351_DATA);                 // Gray Scale Level 31
+    ssd1351_write_byte(0x33, SSD1351_DATA);                 // Gray Scale Level 32
+    ssd1351_write_byte(0x36, SSD1351_DATA);                 // Gray Scale Level 33
+    ssd1351_write_byte(0x39, SSD1351_DATA);                 // Gray Scale Level 34
+    ssd1351_write_byte(0x3C, SSD1351_DATA);                 // Gray Scale Level 35
+    ssd1351_write_byte(0x3F, SSD1351_DATA);                 // Gray Scale Level 36
+    ssd1351_write_byte(0x42, SSD1351_DATA);                 // Gray Scale Level 37
+    ssd1351_write_byte(0x45, SSD1351_DATA);                 // Gray Scale Level 38
+    ssd1351_write_byte(0x48, SSD1351_DATA);                 // Gray Scale Level 39
+    ssd1351_write_byte(0x4C, SSD1351_DATA);                 // Gray Scale Level 40
+    ssd1351_write_byte(0x50, SSD1351_DATA);                 // Gray Scale Level 41
+    ssd1351_write_byte(0x54, SSD1351_DATA);                 // Gray Scale Level 42
+    ssd1351_write_byte(0x58, SSD1351_DATA);                 // Gray Scale Level 43
+    ssd1351_write_byte(0x5C, SSD1351_DATA);                 // Gray Scale Level 44
+    ssd1351_write_byte(0x60, SSD1351_DATA);                 // Gray Scale Level 45
+    ssd1351_write_byte(0x64, SSD1351_DATA);                 // Gray Scale Level 46
+    ssd1351_write_byte(0x68, SSD1351_DATA);                 // Gray Scale Level 47
+    ssd1351_write_byte(0x6C, SSD1351_DATA);                 // Gray Scale Level 48
+    ssd1351_write_byte(0x70, SSD1351_DATA);                 // Gray Scale Level 49
+    ssd1351_write_byte(0x74, SSD1351_DATA);                 // Gray Scale Level 50
+    ssd1351_write_byte(0x78, SSD1351_DATA);                 // Gray Scale Level 51
+    ssd1351_write_byte(0x7D, SSD1351_DATA);                 // Gray Scale Level 52
+    ssd1351_write_byte(0x82, SSD1351_DATA);                 // Gray Scale Level 53
+    ssd1351_write_byte(0x87, SSD1351_DATA);                 // Gray Scale Level 54
+    ssd1351_write_byte(0x8C, SSD1351_DATA);                 // Gray Scale Level 55
+    ssd1351_write_byte(0x91, SSD1351_DATA);                 // Gray Scale Level 56
+    ssd1351_write_byte(0x96, SSD1351_DATA);                 // Gray Scale Level 57
+    ssd1351_write_byte(0x9B, SSD1351_DATA);                 // Gray Scale Level 58
+    ssd1351_write_byte(0xA0, SSD1351_DATA);                 // Gray Scale Level 59
+    ssd1351_write_byte(0xA5, SSD1351_DATA);                 // Gray Scale Level 60
+    ssd1351_write_byte(0xAA, SSD1351_DATA);                 // Gray Scale Level 61
+    ssd1351_write_byte(0xAF, SSD1351_DATA);                 // Gray Scale Level 62
+    ssd1351_write_byte(0xB4, SSD1351_DATA);                 // Gray Scale Level 63
 }
 
 void ssd1351_init(void)
@@ -658,61 +658,61 @@ void ssd1351_init(void)
     SSD1351_RES_SET();
 
     ssd1351_write_byte(SET_COMMAND_LOCK, SSD1351_CMD);          // Set Command Lock
-        ssd1351_write_byte(0x12, SSD1351_DATA);                 // Unlock Driver IC
+    ssd1351_write_byte(0x12, SSD1351_DATA);                     // Unlock Driver IC
     ssd1351_write_byte(SET_COMMAND_LOCK, SSD1351_CMD);          // Set Command Lock
-        ssd1351_write_byte(0xB1, SSD1351_DATA);                 // Unlock All Commands
+    ssd1351_write_byte(0xB1, SSD1351_DATA);                     // Unlock All Commands
 
     ssd1351_write_byte(SET_SLEEP_MODE_ON, SSD1351_CMD);         // Display Off
 
     ssd1351_write_byte(SET_FRONT_CLOCK_DIV_OSC_FREQ, SSD1351_CMD);  // Set Display Clock Divider / Oscillator Frequency
-        ssd1351_write_byte(0xF0, SSD1351_DATA);                     // Set Clock as 90 Frames/Sec
-    ssd1351_write_byte(SET_MUX_RATIO, SSD1351_CMD);                 // Set Multiplex Ratio
-        ssd1351_write_byte(0x7F, SSD1351_DATA);                     // 1/128 Duty (0x0F~0x7F)
-    ssd1351_write_byte(SET_DISPLAY_OFFSET, SSD1351_CMD);            // Set Vertical Scroll by Row
-        ssd1351_write_byte(0x00, SSD1351_DATA);                     // Shift Mapping RAM Counter (0x00~0x7F)
-        ssd1351_write_byte(SET_DISPLAY_START_LINE, SSD1351_CMD);    // Set Vertical Scroll by RAM
-        ssd1351_write_byte(0x00, SSD1351_DATA);                     // Set Mapping RAM Display Start Line (0x00~0x7F)
-    ssd1351_write_byte(SET_REMAP_COLOR_DEPTH, SSD1351_CMD);         // Set Re-Map / Color Depth
-        ssd1351_write_byte(0x74, SSD1351_DATA);                     // Set Horizontal Address Increment
-                                                                    //  Column Address 0 Mapped to SEG0
-                                                                    //  Color Sequence D[15:0]=[RRRRR:GGGGGG:BBBBB]
-                                                                    //  Scan from COM127 to COM0
-                                                                    //  Enable COM Split Odd Even
-                                                                    //  65,536 Colors Mode (0x74)
-                                                                    //  * 262,144 Colors Mode (0xB4)
-    ssd1351_write_byte(SET_GPIO, SSD1351_CMD);                      // General Purpose IO
-        ssd1351_write_byte(0x00, SSD1351_DATA);                     // Disable GPIO Pins Input
-    ssd1351_write_byte(SET_FUNCTION_SELECTION, SSD1351_CMD);        // Set Vertical Scroll by RAM
-        ssd1351_write_byte(0x01, SSD1351_DATA);                     // Enable Internal VDD Regulator
-                                                                    //  Select 8-bit Parallel Interface
-    ssd1351_write_byte(SET_SEGMENT_LOW_VOLTAGE, SSD1351_CMD);       // Set Segment Low Voltage
-        ssd1351_write_byte(0xA0, SSD1351_DATA);                     // Enable External VSL
-        ssd1351_write_byte(0xB5, SSD1351_DATA);                     // Fixed
-        ssd1351_write_byte(0x55, SSD1351_DATA);                     // Fixed
-    ssd1351_write_byte(SET_CONTRAST_CURRENT, SSD1351_CMD);          // Set Contrast Current for Color A, B, C
-        ssd1351_write_byte(0xC8, SSD1351_DATA);                     // Color A
-        ssd1351_write_byte(0x80, SSD1351_DATA);                     // Color B
-        ssd1351_write_byte(0xC8, SSD1351_DATA);                     // Color C
-    ssd1351_write_byte(SET_MASTER_CURRENT, SSD1351_CMD);            // Master Contrast Current Control
-        ssd1351_write_byte(0x0F, SSD1351_DATA);                     // Maximum
-
-    ssd1351_set_gray_scale_table();                                 // Set Pulse Width for Gray Scale Table
+    ssd1351_write_byte(0xF0, SSD1351_DATA);                     // Set Clock as 90 Frames/Sec
+    ssd1351_write_byte(SET_MUX_RATIO, SSD1351_CMD);             // Set Multiplex Ratio
+    ssd1351_write_byte(0x7F, SSD1351_DATA);                     // 1/128 Duty (0x0F~0x7F)
+    ssd1351_write_byte(SET_DISPLAY_OFFSET, SSD1351_CMD);        // Set Vertical Scroll by Row
+    ssd1351_write_byte(0x00, SSD1351_DATA);                     // Shift Mapping RAM Counter (0x00~0x7F)
+    ssd1351_write_byte(SET_DISPLAY_START_LINE, SSD1351_CMD);    // Set Vertical Scroll by RAM
+    ssd1351_write_byte(0x00, SSD1351_DATA);                     // Set Mapping RAM Display Start Line (0x00~0x7F)
+    ssd1351_write_byte(SET_REMAP_COLOR_DEPTH, SSD1351_CMD);     // Set Re-Map / Color Depth
+    ssd1351_write_byte(0x74, SSD1351_DATA);                     // Set Horizontal Address Increment
+                                                                //  Column Address 0 Mapped to SEG0
+                                                                //  Color Sequence D[15:0]=[RRRRR:GGGGGG:BBBBB]
+                                                                //  Scan from COM127 to COM0
+                                                                //  Enable COM Split Odd Even
+                                                                //  65,536 Colors Mode (0x74)
+                                                                //  * 262,144 Colors Mode (0xB4)
+    ssd1351_write_byte(SET_GPIO, SSD1351_CMD);                  // General Purpose IO
+    ssd1351_write_byte(0x00, SSD1351_DATA);                     // Disable GPIO Pins Input
+    ssd1351_write_byte(SET_FUNCTION_SELECTION, SSD1351_CMD);    // Set Vertical Scroll by RAM
+    ssd1351_write_byte(0x01, SSD1351_DATA);                     // Enable Internal VDD Regulator
+                                                                // Select 8-bit Parallel Interface
+    ssd1351_write_byte(SET_SEGMENT_LOW_VOLTAGE, SSD1351_CMD);   // Set Segment Low Voltage
+    ssd1351_write_byte(0xA0, SSD1351_DATA);                     // Enable External VSL
+    ssd1351_write_byte(0xB5, SSD1351_DATA);                     // Fixed
+    ssd1351_write_byte(0x55, SSD1351_DATA);                     // Fixed
+    ssd1351_write_byte(SET_CONTRAST_CURRENT, SSD1351_CMD);      // Set Contrast Current for Color A, B, C
+    ssd1351_write_byte(0xC8, SSD1351_DATA);                     // Color A
+    ssd1351_write_byte(0x80, SSD1351_DATA);                     // Color B
+    ssd1351_write_byte(0xC8, SSD1351_DATA);                     // Color C
+    ssd1351_write_byte(SET_MASTER_CURRENT, SSD1351_CMD);        // Master Contrast Current Control
+    ssd1351_write_byte(0x0F, SSD1351_DATA);                     // Maximum
 
     ssd1351_write_byte(SET_RESET_PRECHARGE_PERIOD, SSD1351_CMD);    // Phase 1 (Reset) & Phase 2 (Pre-Charge) Period Adjustment
-        ssd1351_write_byte(0x32, SSD1351_DATA);                     // Set Phase 1 as 5 Clocks & Phase 2 as 3 Clocks
-    ssd1351_write_byte(SET_PRECHARGE_VOLTAGE, SSD1351_CMD);         // Set Pre-Charge Voltage Level
-        ssd1351_write_byte(0x17, SSD1351_DATA);                     // Set Pre-Charge Voltage Level as 0.50*VCC
-    ssd1351_write_byte(SET_DISPLAY_ENHANCEMENT, SSD1351_CMD);       // Display Enhancement
-        ssd1351_write_byte(0xA4, SSD1351_DATA);                     // Enhance Display Performance
-        ssd1351_write_byte(0x00, SSD1351_DATA);                     // Fixed
-        ssd1351_write_byte(0x00, SSD1351_DATA);                     // Fixed
+    ssd1351_write_byte(0x32, SSD1351_DATA);                     // Set Phase 1 as 5 Clocks & Phase 2 as 3 Clocks
+    ssd1351_write_byte(SET_PRECHARGE_VOLTAGE, SSD1351_CMD);     // Set Pre-Charge Voltage Level
+    ssd1351_write_byte(0x17, SSD1351_DATA);                     // Set Pre-Charge Voltage Level as 0.50*VCC
+    ssd1351_write_byte(SET_DISPLAY_ENHANCEMENT, SSD1351_CMD);   // Display Enhancement
+    ssd1351_write_byte(0xA4, SSD1351_DATA);                     // Enhance Display Performance
+    ssd1351_write_byte(0x00, SSD1351_DATA);                     // Fixed
+    ssd1351_write_byte(0x00, SSD1351_DATA);                     // Fixed
     ssd1351_write_byte(SET_SECOND_PRECHARGE_PERIOD, SSD1351_CMD);   // Set Second Pre-Charge Period
-        ssd1351_write_byte(0x01, SSD1351_DATA);                     // Set Second Pre-Charge Period as 1 Clock
-    ssd1351_write_byte(SET_VCOMH_VOLTAGE, SSD1351_CMD);             // Set COM Deselect Voltage Level
-        ssd1351_write_byte(0x05, SSD1351_DATA);                     // Set Common Pins Deselect Voltage Level as 0.82*VCC
-    ssd1351_write_byte(SET_NORMAL_DISPLAY, SSD1351_CMD);            // Normal Display Mode
+    ssd1351_write_byte(0x01, SSD1351_DATA);                     // Set Second Pre-Charge Period as 1 Clock
+    ssd1351_write_byte(SET_VCOMH_VOLTAGE, SSD1351_CMD);         // Set COM Deselect Voltage Level
+    ssd1351_write_byte(0x05, SSD1351_DATA);                     // Set Common Pins Deselect Voltage Level as 0.82*VCC
+    ssd1351_write_byte(SET_NORMAL_DISPLAY, SSD1351_CMD);        // Normal Display Mode
+
+    ssd1351_set_gray_scale_table();                             // Set Pulse Width for Gray Scale Table
 
     ssd1351_clear_gram();
 
-    ssd1351_write_byte(SET_SLEEP_MODE_OFF, SSD1351_CMD);            // Display On
+    ssd1351_write_byte(SET_SLEEP_MODE_OFF, SSD1351_CMD);        // Display On
 }
