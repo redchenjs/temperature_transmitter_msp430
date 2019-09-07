@@ -6,11 +6,12 @@
  */
 
 #include <stdint.h>
+
 #include <msp430.h>
 
-#include <inc/user/measure.h>
-#include <inc/user/control.h>
-#include <inc/user/display.h>
+#include "user/measure.h"
+#include "user/control.h"
+#include "user/display.h"
 
 void input0_handle(void)
 {

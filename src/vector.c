@@ -7,13 +7,13 @@
 
 #include <msp430.h>
 
-#include <inc/device/wdt.h>
-#include <inc/device/usci_a0_spi.h>
-#include <inc/device/usci_a1_spi.h>
-#include <inc/device/usci_b0_spi.h>
-#include <inc/device/usci_b1_spi.h>
-#include <inc/device/usci_b0_i2c.h>
-#include <inc/device/usci_b1_i2c.h>
+#include "chip/wdt.h"
+#include "chip/usci_a0_spi.h"
+#include "chip/usci_a1_spi.h"
+#include "chip/usci_b0_spi.h"
+#include "chip/usci_b1_spi.h"
+#include "chip/usci_b0_i2c.h"
+#include "chip/usci_b1_i2c.h"
 
 #pragma vector=WDT_VECTOR
 __interrupt void WDT_ISR(void)
@@ -44,7 +44,7 @@ __interrupt void USCI_A0_ISR(void)
 #pragma vector = USCI_B0_VECTOR
 __interrupt void USCI_B0_ISR(void)
 {
-    switch (__even_in_range(UCB0IV,12)) {
+    switch (__even_in_range(UCB0IV, 12)) {
     case  0: break;                           // Vector  0: No interrupts
     case  2: break;                           // Vector  2: ALIFG
     case  4: break;                           // Vector  4: NACKIFG

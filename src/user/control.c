@@ -9,14 +9,14 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include <inc/driver/led.h>
-#include <inc/driver/dac8571.h>
+#include "core/lut.h"
 
-#include <inc/system/lut.h>
+#include "board/led.h"
+#include "board/dac8571.h"
 
-#include <inc/user/measure.h>
-#include <inc/user/control.h>
-#include <inc/user/display.h>
+#include "user/measure.h"
+#include "user/control.h"
+#include "user/display.h"
 
 static control_data_t control_data = {
     .mode = 0,

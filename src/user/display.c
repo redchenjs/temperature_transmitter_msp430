@@ -11,12 +11,13 @@
 
 #include <msp430.h>
 
-#include <inc/driver/ssd1351.h>
-#include <inc/system/fonts.h>
+#include "core/fonts.h"
 
-#include <inc/user/measure.h>
-#include <inc/user/control.h>
-#include <inc/user/display.h>
+#include "board/ssd1351.h"
+
+#include "user/measure.h"
+#include "user/control.h"
+#include "user/display.h"
 
 static display_data_t display_data = {
     .flag = 2,

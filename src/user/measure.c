@@ -8,11 +8,11 @@
 #include <stdio.h>
 #include <stdint.h>
 
-#include <inc/driver/ads1118.h>
+#include "board/ads1118.h"
 
-#include <inc/user/measure.h>
-#include <inc/user/control.h>
-#include <inc/user/display.h>
+#include "user/measure.h"
+#include "user/control.h"
+#include "user/display.h"
 
 static measure_data_t measure_data = {
     .mode = 1,
